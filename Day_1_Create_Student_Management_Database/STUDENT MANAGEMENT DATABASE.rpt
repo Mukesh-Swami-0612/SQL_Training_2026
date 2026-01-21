@@ -1,0 +1,124 @@
+﻿student_id  name                                               email                                                                                                phone           gender     dob        department                                         address
+----------- -------------------------------------------------- ---------------------------------------------------------------------------------------------------- --------------- ---------- ---------- -------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1           Mukesh Swami                                       mukesh@gmail.com                                                                                     9876543210      Male       2003-06-12 CSE                                                Sirsa, Haryana
+2           Rachna Devi                                        rachna@gmail.com                                                                                     9123456780      Female     2004-02-20 IT                                                 Punjab
+3           Anish Sharma                                       anish@gmail.com                                                                                      9000000001      Male       2003-01-10 CSE                                                Delhi
+4           Prashant Verma                                     prashant@gmail.com                                                                                   9000000002      Male       2002-11-05 IT                                                 Chandigarh
+
+(4 rows affected)
+
+course_id   course_name                                                                                          course_code          credits
+----------- ---------------------------------------------------------------------------------------------------- -------------------- -----------
+1           Database Management System                                                                           DBMS101              4
+2           Java Programming                                                                                     JAVA201              3
+3           Cloud Computing                                                                                      CLOUD301             4
+
+(3 rows affected)
+
+teacher_id  teacher_name                                       email                                                                                                phone           department
+----------- -------------------------------------------------- ---------------------------------------------------------------------------------------------------- --------------- --------------------------------------------------
+1           Rahul Kumar                                        rahul@gmail.com                                                                                      9991112223      CSE
+2           Neha Sharma                                        neha@gmail.com                                                                                       9991112224      IT
+
+(2 rows affected)
+
+enrollment_id student_id  course_id   enrollment_date
+------------- ----------- ----------- ---------------
+1             1           1           2026-01-21
+2             1           2           2026-01-21
+3             2           2           2026-01-21
+4             3           1           2026-01-21
+5             4           3           2026-01-21
+6             1           1           2026-01-21
+7             1           2           2026-01-21
+8             2           2           2026-01-21
+9             3           1           2026-01-21
+10            4           3           2026-01-21
+11            1           1           2026-01-21
+12            1           2           2026-01-21
+13            2           2           2026-01-21
+14            3           1           2026-01-21
+15            4           3           2026-01-21
+
+(15 rows affected)
+
+mark_id     student_id  course_id   marks
+----------- ----------- ----------- -----------
+1           1           1           85
+2           1           2           90
+3           2           2           78
+4           3           1           88
+5           4           3           92
+6           1           1           85
+7           1           2           90
+8           2           2           78
+9           3           1           88
+10          4           3           92
+11          1           1           85
+12          1           2           90
+13          2           2           78
+14          3           1           88
+15          4           3           92
+
+(15 rows affected)
+
+attendance_id student_id  course_id   attendance_date status
+------------- ----------- ----------- --------------- ----------
+1             1           1           2026-01-20      Present
+2             1           2           2026-01-20      Absent
+3             2           2           2026-01-20      Present
+4             3           1           2026-01-20      Present
+5             4           3           2026-01-20      Absent
+6             1           1           2026-01-20      Present
+7             1           2           2026-01-20      Absent
+8             2           2           2026-01-20      Present
+9             3           1           2026-01-20      Present
+10            4           3           2026-01-20      Absent
+11            1           1           2026-01-20      Present
+12            1           2           2026-01-20      Absent
+13            2           2           2026-01-20      Present
+14            3           1           2026-01-20      Present
+15            4           3           2026-01-20      Absent
+
+(15 rows affected)
+
+assignment_id teacher_id  course_id
+------------- ----------- -----------
+1             1           1
+2             1           2
+3             2           3
+4             1           1
+5             1           2
+6             2           3
+7             1           1
+8             1           2
+9             2           3
+
+(9 rows affected)
+
+ForeignKey                                                                                                                       ParentTable                                                                                                                      ParentColumn                                                                                                                     ReferencedTable                                                                                                                  ReferencedColumn
+-------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------
+FK__Enrollmen__stude__5441852A                                                                                                   Enrollments                                                                                                                      student_id                                                                                                                       Students                                                                                                                         student_id
+FK__Marks__student_i__59063A47                                                                                                   Marks                                                                                                                            student_id                                                                                                                       Students                                                                                                                         student_id
+FK__Attendanc__stude__5DCAEF64                                                                                                   Attendance                                                                                                                       student_id                                                                                                                       Students                                                                                                                         student_id
+FK__Enrollmen__cours__5535A963                                                                                                   Enrollments                                                                                                                      course_id                                                                                                                        Courses                                                                                                                          course_id
+FK__Marks__course_id__59FA5E80                                                                                                   Marks                                                                                                                            course_id                                                                                                                        Courses                                                                                                                          course_id
+FK__Attendanc__cours__5EBF139D                                                                                                   Attendance                                                                                                                       course_id                                                                                                                        Courses                                                                                                                          course_id
+FK__Course_As__cours__628FA481                                                                                                   Course_Assignment                                                                                                                course_id                                                                                                                        Courses                                                                                                                          course_id
+FK__Course_As__teach__619B8048                                                                                                   Course_Assignment                                                                                                                teacher_id                                                                                                                       Teachers                                                                                                                         teacher_id
+
+(8 rows affected)
+
+stud_id     stud_phone
+----------- ---------------
+1           9876543210
+2           9123456780
+3           9000000001
+4           9000000002
+
+(4 rows affected)
+
+Msg 2714, Level 16, State 6, Line 211
+There is already an object named 'tbl_student_backup' in the database.
+
+Completion time: 2026-01-21T16:39:17.0883336+05:30
